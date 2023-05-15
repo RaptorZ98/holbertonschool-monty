@@ -70,7 +70,7 @@ void m_pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		freeList(*stack);
-		fprintf(stderr, "L<%d>: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		_exit(EXIT_FAILURE);
 	}
 	aux = *stack;
@@ -95,7 +95,7 @@ void m_pint(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		freeList(*stack);
-		fprintf(stderr, "L<%d>: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		_exit(EXIT_FAILURE);
 	}
 	aux = *stack;
@@ -128,6 +128,6 @@ void m_swap(stack_t **stack, unsigned int line_number)
 		}
 	}
 	freeList(*stack);
-	fprintf(stderr, "L<%d>: can't swap, stack too short\n", line_number);
+	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 	_exit(EXIT_FAILURE);
 }

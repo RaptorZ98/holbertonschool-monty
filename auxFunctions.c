@@ -36,6 +36,8 @@ void _getCommand(char *file, stack_t **stack)
 	while (getline(&buff, &n, filed) != -1)
 	{
 		line++;
+		if (buff == NULL)
+			continue;
 		checkCommand(buff, line, stack);
 		buff = createBuff();
 	}

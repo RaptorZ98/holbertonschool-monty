@@ -26,7 +26,7 @@ void m_add(stack_t **stack, unsigned int line_number)
 		}
 	}
 	freeList(*stack);
-	fprintf(stderr, "L<%d>: can't add, stack too short", line_number);
+	fprintf(stderr, "L%d: can't add, stack too short", line_number);
 	_exit(EXIT_FAILURE);
 }
 
@@ -59,7 +59,7 @@ int prepPush(char *token, char *buff, int line, stack_t **stack)
 	}
 	free(buff);
 	freeList(*stack);
-	fprintf(stderr, "L<%d>: usage: push integer\n", line);
+	fprintf(stderr, "L%d: usage: push integer\n", line);
 	_exit(EXIT_FAILURE);
 }
 
@@ -72,7 +72,7 @@ int prepPush(char *token, char *buff, int line, stack_t **stack)
 */
 void freeExit(char *buff, stack_t **stack, int line, char *token)
 {
-	fprintf(stderr, "L<%d>: unknown instruction <%s>\n", line, token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
 	free(buff);
 	freeList(*stack);
 	_exit(EXIT_FAILURE);
