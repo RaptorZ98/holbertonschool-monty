@@ -80,8 +80,13 @@ void m_pop(stack_t **stack, unsigned int line_number)
 	{
 		temp = aux->prev;
 		temp->next = NULL;
+		free(aux);
 	}
-	free(aux);
+	else
+	{
+		free(aux);
+		aux = NULL;
+	}
 }
 /**
  * m_pint - prits the value at the top of the stack
