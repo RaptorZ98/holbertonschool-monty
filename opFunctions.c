@@ -44,7 +44,7 @@ void m_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (stack == NULL)
+	if (*stack == NULL)
 		return;
 	(void)line_number;
 	temp = *stack;
