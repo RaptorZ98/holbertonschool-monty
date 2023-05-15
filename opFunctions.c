@@ -85,7 +85,7 @@ void m_pop(stack_t **stack, unsigned int line_number)
 	else
 	{
 		free(aux);
-		aux = NULL;
+		*stack = NULL;
 	}
 }
 /**
