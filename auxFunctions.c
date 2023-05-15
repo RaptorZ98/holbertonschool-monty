@@ -42,10 +42,12 @@ void _getCommand(char *file, stack_t **stack)
 		{
 			free(buff);
 			buff = createBuff();
+			pos = 0;
 			continue;
 		}
 		checkCommand(buff, line, stack);
 		buff = createBuff();
+		pos = 0;
 	}
 	free(buff);
 	freeList(*stack);
