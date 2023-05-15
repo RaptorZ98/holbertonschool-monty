@@ -109,9 +109,11 @@ int checkNumbers(char *token)
 {
 	int n = 0;
 
+	if (token == NULL)
+		return (1);
 	while (token[n] != '\0')
 	{
-		if (n == 0 && token[n] == '0')
+		if (n == 0 && token[n] == '-')
 			n++;
 		else if (token[n] >= '0' && token[n] <= '9')
 			n++;
