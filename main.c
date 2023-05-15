@@ -6,22 +6,19 @@
  * @argv: the arguments passed
  * Return: 0 if fucntions correctly
 */
-int main(int argc, char **argv){
-	char *buff;
-	FILE *file;
+int main(int argc, char **argv)
+{
+	stack_t *nod = NULL;
+	stack_t **stack = &nod;
 
-	if (argc != 2){
+	argument = 0;
+	if (argc != 2)
+	{
 		fprintf(stderr, "USAGE: monty file\n");
 		_exit(EXIT_FAILURE);
 	}
 
-	file = fopen(argv[1], "r");
-	if (file == NULL){
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		_exit(EXIT_FAILURE);
-	}
-	buff = _getCommand(file);
+	_getCommand(argv[1], stack);
 
-	fclose(file);
-	return 0;
+	return (0);
 }
