@@ -44,7 +44,7 @@ void _getCommand(char *file, stack_t **stack)
 			buff = createBuff();
 			continue;
 		}
-		checkCommand(buff, line, stack);
+		checkCommand(&buff[pos], line, stack);
 		buff = createBuff();
 	}
 	free(buff);
