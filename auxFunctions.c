@@ -21,7 +21,7 @@ void freeList(stack_t *stack)
 */
 void _getCommand(char *file, stack_t **stack)
 {
-	int line = 0;
+	int line = 0, pos = 0;
 	char *buff = NULL;
 	size_t n = 0;
 	FILE *filed;
@@ -36,7 +36,9 @@ void _getCommand(char *file, stack_t **stack)
 	while (getline(&buff, &n, filed) != -1)
 	{
 		line++;
-		if (buff[0] == '\0')
+		while (buff[pos] && buff[pos] <= 32)
+			pos++;
+		if (!buff[pos])
 		{
 			free(buff);
 			buff = createBuff();
